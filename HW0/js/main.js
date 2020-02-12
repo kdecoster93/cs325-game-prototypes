@@ -53,6 +53,9 @@ window.onload = function() {
 	var playerBullets;
 	var enemyBullets;
 	var time = 0;
+	var hp1;
+	var hp2;
+	var hp3;
 	// Creating acceleration variables for the player
 	var player_X_Accel = 0;
 	var player_Y_Accel = 0;
