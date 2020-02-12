@@ -46,6 +46,7 @@ window.onload = function() {
 
 	// KAD ----
 	var player;
+	var enemy;
 	var healthpoints;
 	var reticle;
 	var moveKeys;
