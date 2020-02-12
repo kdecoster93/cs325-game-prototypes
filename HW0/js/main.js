@@ -67,8 +67,8 @@ window.onload = function() {
 	<!-- Creating a new Bullet class that constructs a Bullet and controls its firing properties -->
 	var Bullet = new Phaser.Class({
 
-		//Extends: Phaser.GameObjects.Image,
-		Extends: Phaser.Image,
+		Extends: Phaser.GameObjects.Image,
+		//Extends: Phaser.Image,
 
 		initialize:
 
