@@ -463,7 +463,7 @@ window.onload = function() {
 				//this.physics.pause();
 				game.scene.pause("default");
 				player.setTint(0xff0000);
-				gameOver = true;
+				//gameOver = true;
 				gameoverText.visible = true;
 			}
 
