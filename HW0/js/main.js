@@ -15,6 +15,7 @@ window.onload = function() {
 		<!-- Width and Height determine the size of the Phaser canvas -->
 		width: 800,
 		height: 600,
+	     	parent: 'game',
 
 		<!-- Including the physics system for our game. -->
 		physics: {
@@ -67,6 +68,7 @@ window.onload = function() {
 	var Bullet = new Phaser.Class({
 
 		Extends: Phaser.GameObjects.Image,
+		//Extends: Phaser.Image,
 
 		initialize:
 
