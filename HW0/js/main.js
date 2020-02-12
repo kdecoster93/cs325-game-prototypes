@@ -32,19 +32,26 @@ window.onload = function() {
 			update: update,
 
 			<!-- Any additional properties, which will be copied to the Scene after it's created -->
-			extend: {
-                    player: null,
-                    healthpoints: null,
-                    reticle: null,
-                    moveKeys: null,
-                    playerBullets: null,
-                    enemyBullets: null,
-                    time: 0,
-			}
+			//extend: {
+                    //player: null,
+                    //healthpoints: null,
+                    //reticle: null,
+                    //moveKeys: null,
+                    //playerBullets: null,
+                    //enemyBullets: null,
+                    //time: 0,
+			//}
 		}
 	};
 
 	// KAD ----
+	var player;
+	var healthpoints;
+	var reticle;
+	var moveKeys;
+	var playerBullets;
+	var enemyBullets;
+	var time = 0;
 	// Creating acceleration variables for the player
 	var player_X_Accel = 0;
 	var player_Y_Accel = 0;
