@@ -74,7 +74,8 @@ window.onload = function() {
 	var explosion_sound;
 
 	var game = new Phaser.Game(config);
-
+	
+	// Top Down Shooter Example Code ------------
 	<!-- Creating a new Bullet class that constructs a Bullet and controls its firing properties -->
 	var Bullet = new Phaser.Class({
 
@@ -133,7 +134,7 @@ window.onload = function() {
 			}
 		}
 	});
-
+	// -----------------
 
 	<!-- Load the assets we need for our game -->
 	function preload () {
@@ -161,10 +162,12 @@ window.onload = function() {
 		// to collide with the world bounds then it will automatically stop when it reaches any of the edges. Parameters: Top Left X, Top Left Y,
 		// Boundary Width, Boundary Height. 1920 x 1024 is the size of space_background
 		this.physics.world.setBounds(-960, -512, 3840, 2048);
-
+		
+		// Top Down Shooter Example Code ------------
 		// Add 2 groups for Bullet objects: Differentiates between enemy bullets and players
 		playerBullets = this.physics.add.group({ classType: Bullet, runChildUpdate: true });
 		enemyBullets = this.physics.add.group({ classType: Bullet, runChildUpdate: true });
+		// ------------------------------------------
 
 		// Add background player, enemy, reticle, healthpoint sprites
 		var background = this.add.image(0, 0, 'background');
@@ -249,7 +252,8 @@ window.onload = function() {
 
 		enemy.anims.play("enemy_ship_anim", true);
 		//player.anims.play("enemy_ship_anim", true);
-
+		
+		// Top Down Shooter Example Code ------------
 		// Set image/sprite properties
 		// Default origin values
 		background.setOrigin(0.5, 0.5).setDisplaySize(1920, 1024);
@@ -270,8 +274,8 @@ window.onload = function() {
 		// Set camera properties
 		this.cameras.main.zoom = 0.5;
 		this.cameras.main.startFollow(player);
+		// ------------------------------------------
 
-		// KAD -------
 		// Font size and color, default font type is courier. X, Y coords
 		y_Accel_Text = this.add.text(-400, -300, 'Y Acceleration: 0', { fontFamily: 'Arial', fontSize: '24px', fill: '#ffffff' });
 		x_Accel_Text = this.add.text(-400, -252, 'X Acceleration: 0', { fontFamily: 'Arial', fontSize: '24px', fill: '#ffffff' });
@@ -293,7 +297,8 @@ window.onload = function() {
 		//x_Accel_Text.fixedToCamera = true;
 		//x_Accel_Text.cameraOffset.setTo(16, 16);
 		//----------
-
+		
+		// Top Down Shooter Example Code ------------
 		// Phaser built in keyboard manager
 		// Creates object for input with WASD kets
 		moveKeys = this.input.keyboard.addKeys({
@@ -302,6 +307,7 @@ window.onload = function() {
 			'left': Phaser.Input.Keyboard.KeyCodes.A,
 			'right': Phaser.Input.Keyboard.KeyCodes.D
 		});
+		// ------------------------------------------
 
 		// Key variables
 		/*var key_W = scene.input.keyboard.addKey('W');  // Get key object
@@ -364,7 +370,8 @@ window.onload = function() {
 			}
 		});
 		*/
-
+		
+		// Top Down Shooter Example Code ------------
 		// Fires bullet from player on left click of mouse
 		this.input.on('pointerdown', function (pointer, time, lastFired) {
 			if (player.active === false) {
@@ -402,6 +409,7 @@ window.onload = function() {
 			}
 		}, this);
 	}
+	// -----------------------------------------------------------
 
 	// Bullet hits an enemy
 	function enemyHitCallback(enemyHit, bulletHit) {
@@ -439,7 +447,8 @@ window.onload = function() {
 			bulletHit.setActive(false).setVisible(false);
 		}
 	}
-
+	
+	// Top Down Shooter Example Code ------------
 	// Reduces the health of the player and destroys the bullet when called. If the player loses all their health the game ends. 
 	function playerHitCallback(playerHit, bulletHit) {
 
@@ -462,16 +471,19 @@ window.onload = function() {
 				// Game over state should execute here
 				//this.physics.pause();
 				game.scene.pause("default");
+				// KAD -----------------------------
 				player.setTint(0xff0000);
 				//gameOver = true;
 				gameoverText.visible = true;
+				// ---------------------------------
 			}
 
 			// Destroy bullet
 			bulletHit.setActive(false).setVisible(false);
 		}
 	}
-
+	
+	// Top Down Shooter Example Code ------------
 	// Determines whether or not an enemy can fire at the player based on the amount of time that has passed.
 	function enemyFire(enemy, player, time, gameObject) {
 		if (enemy.active === false) {
@@ -531,7 +543,7 @@ window.onload = function() {
 		else if (distY < -600)
 			reticle.y = player.y-600;
 	}
-
+	// --------------------------------------
 	/*function enemySpawn (player, star)
     {
         
@@ -814,6 +826,7 @@ window.onload = function() {
 		velocity_X_Text.setText('Velocity X: ' + player.body.velocity.x);
 		velocity_Y_Text.setText('Velocity Y: ' + player.body.velocity.y);
 
+		// Top Down Shooter Example Code ------------
 		// Rotates player to face towards reticle
 		player.rotation = Phaser.Math.Angle.Between(player.x, player.y, reticle.x, reticle.y);
 
