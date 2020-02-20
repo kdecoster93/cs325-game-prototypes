@@ -6,6 +6,38 @@ class play_Scene extends Phaser.Scene {
         // "playGame" is the identifier for this scene
         super ("play_game");
     }
+    preload() {
+    	this.load.spritesheet("player", "assets/playership_short.png",{
+            frameWidth: 96, frameHeight: 164
+        });
+	this.anims.create({
+			key: 'gear_first',
+			frames: this.anims.generateFrameNumbers('player', { start: 0, end: 2 }),
+			frameRate: 20,
+			repeat: -1
+	});
+
+	this.anims.create({
+		key: 'gear_second',
+		frames: this.anims.generateFrameNumbers('player', { start: 3, end: 8 }),
+            	frameRate: 20,
+            	repeat: -1
+	});
+
+	this.anims.create({
+		key: 'gear_third',
+		frames: this.anims.generateFrameNumbers('player', { start: 9, end: 13 }),
+		frameRate: 20,
+		repeat: -1
+        });
+
+        this.anims.create({
+		key: 'gear_fourth',
+		frames: this.anims.generateFrameNumbers('player', { start: 14, end: 17 }),
+		frameRate: 20,
+		repeat: -1
+	});
+    }
     
     create() {
         // class variable for background named this.background
