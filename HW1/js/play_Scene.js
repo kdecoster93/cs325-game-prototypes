@@ -8,7 +8,7 @@ class play_Scene extends Phaser.Scene {
     }
     preload() {
     	this.load.spritesheet("player", "assets/Playership_short.png",{
-            frameWidth: 96, frameHeight: 164
+            frameWidth: 24, frameHeight: 41
         });
 	this.anims.create({
 			key: 'gear_first',
