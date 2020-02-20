@@ -7,7 +7,7 @@ class play_Scene extends Phaser.Scene {
         super ("play_game");
     }
     preload() {
-    	this.load.spritesheet("player", "assets/playership_short.png",{
+    	this.load.spritesheet("player", "assets/Playership_short.png",{
             frameWidth: 96, frameHeight: 164
         });
 	this.anims.create({
