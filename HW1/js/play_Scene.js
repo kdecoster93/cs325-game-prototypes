@@ -266,7 +266,7 @@ class play_Scene extends Phaser.Scene {
         }, this);
         
         // Pointer lock will only work after mousedown
-		game.canvas.addEventListener('mousedown', function () {
+		this.game.canvas.addEventListener('mousedown', function () {
 			game.input.mouse.requestPointerLock();
 		});
 
