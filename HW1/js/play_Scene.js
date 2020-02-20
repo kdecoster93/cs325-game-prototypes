@@ -22,7 +22,7 @@ class play_Scene extends Phaser.Scene {
         // this.terrain = this.map.addTilesetImage('Tile_Test_01', 'tiles');
 
 
-        this.background = this.add.tileSprite(0,0, config.width, config.height, "tiles");
+        this.background = this.add.tileSprite(0,0, 800, 600, "tiles");
         this.background.setOrigin(0,0);
         // The speed that the map will initially move
         this.mapSpeed = 2.5;
@@ -80,18 +80,18 @@ class play_Scene extends Phaser.Scene {
         //this.ship3 = this.add.sprite(config.width/2 + 50, config.height/2, "ship3");
         
         // using the config variable to position ships in the scene (X, Y)
-        this.squidShip = this.physics.add.sprite(config.width / 2 - 250, config.height / 2 + 150, "ship1");
+        this.squidShip = this.physics.add.sprite(800 / 2 - 250, 600 / 2 + 150, "ship1");
         // flipping the Squid Ship upside down
         //this.squidShip.flipY = true;
-        this.ship2 = this.add.sprite(config.width / 2 + 100, config.height / 2 + 200, "ship1");
-        this.ship3 = this.add.sprite(config.width / 2 + 250, config.height / 2 + 150, "ship1");
+        this.ship2 = this.add.sprite(800 / 2 + 100, 600 / 2 + 200, "ship1");
+        this.ship3 = this.add.sprite(800 / 2 + 250, 600 / 2 + 150, "ship1");
 
         this.squidShip.setScale(0.5);
         this.ship2.setScale(0.85);
         this.ship3.setScale(1.2);
 
         // enemy that attacks our player
-        this.enemy = this.physics.add.sprite(config.width / 2, config.height/2 + 250, "ship1")
+        this.enemy = this.physics.add.sprite(800 / 2, 600/2 + 250, "ship1")
         this.enemy.setScale(1.5);
 
         // Putting our enemy ships into a physics group 
@@ -100,7 +100,7 @@ class play_Scene extends Phaser.Scene {
         this.enemies.add(this.ship2);
         this.enemies.add(this.ship3);
 
-        this.player = this.physics.add.sprite(config.width / 2, config.height / 2 - 150, "player");
+        this.player = this.physics.add.sprite(800 / 2, 600 / 2 - 150, "player");
         // scale an image
         this.player.setScale(0.75);
         this.player.play("gear_first");
@@ -113,8 +113,8 @@ class play_Scene extends Phaser.Scene {
         // Draw polygon lines with coords
         graphics.beginPath();
         graphics.moveTo(0, 0);
-        graphics.lineTo(config.width, 0);
-        graphics.lineTo(config.width, 35);
+        graphics.lineTo(800, 0);
+        graphics.lineTo(800, 35);
         graphics.lineTo(0, 20);
         graphics.lineTo(0, 0);
         // Close and fill
@@ -315,8 +315,8 @@ class play_Scene extends Phaser.Scene {
 				//enemyHit.setX(Phaser.Math.Between(0, config.width));
 				//enemyHit.setY(Phaser.Math.Between(0, config.height));
                 // respawn the enemy back at the bottom
-                enemyHit.y = config.height;
-                var randomX = Phaser.Math.Between(0, config.width);
+                enemyHit.y = 600;
+                var randomX = Phaser.Math.Between(0, 800);
                 enemyHit.x = randomX;
                 enemyHit.setTexture("ship1");
                 enemyHit.anims.play("squidShip_anim", true);
@@ -603,8 +603,8 @@ class play_Scene extends Phaser.Scene {
 
     // resets a ships position at the top of the config screen on a random x coordinate
     resetShipPos(ship) {
-        ship.y = config.height;
-        var randomX = Phaser.Math.Between(0, config.width);
+        ship.y = 600;
+        var randomX = Phaser.Math.Between(0, 800);
         ship.x = randomX;
     }
 
@@ -649,8 +649,8 @@ class play_Scene extends Phaser.Scene {
 
     // Moves the player back to their starting position and resets the game
     resetPlayer() {
-        var x = config.width / 2 - 8;
-        var y = config.height + 64;
+        var x = 800 / 2 - 8;
+        var y = 600 + 64;
         this.player.enableBody(true, x, y, true, true);
         this.player.alpha = 0.5;
 
@@ -658,7 +658,7 @@ class play_Scene extends Phaser.Scene {
             // tween targets ship
             targets: this.player,
             // player's ship is hidden below the screen, move 64 pixels above the bottom of screen
-            y: config.height - 64,
+            y: 600 - 64,
             ease: 'Power1',
             // duration is 1.5 seconds
             duration: 1500,
