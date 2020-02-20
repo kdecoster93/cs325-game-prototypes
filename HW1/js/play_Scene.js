@@ -161,8 +161,9 @@ class play_Scene extends Phaser.Scene {
         this.velocityUI = this.add.bitmapText(600, 5, "pixelFont", "VELOCITY: ", 32);
 
         // Creating the player's aiming reticle
-        this.reticle = this.physics.add.sprite(this.player.x, this.player.y + 50, 'target');
+        this.reticle = this.physics.add.sprite(this.player.x, this.player.y, 'target');
         this.reticle.setOrigin(0.5, 0.5).setDisplaySize(25, 25).setCollideWorldBounds(true);
+	this.reticle.visible = false;
 
         // Velocity for the player
         this.hpText = this.add.bitmapText(320, 0, "pixelFont", "HP: ", 32);
