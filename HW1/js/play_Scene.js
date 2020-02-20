@@ -135,7 +135,7 @@ class play_Scene extends Phaser.Scene {
         this.player = this.physics.add.sprite(800 / 2, 600 / 2 - 150, "player");
         // scale an image
         this.player.setScale(0.75);
-        this.player.play("gear_first");
+        //this.player.play("gear_first");
         this.player.setCollideWorldBounds(true);
 
         // Creates a black strip background for our Score to rest on
@@ -513,6 +513,7 @@ class play_Scene extends Phaser.Scene {
 
         // KAD -------------------------
         // Player Ship animations
+	/*
         if (this.mapSpeed > 15) {
             //console.log("true");
             if (this.mapSpeed > 50) {
@@ -553,6 +554,7 @@ class play_Scene extends Phaser.Scene {
                 this.anim2 = false;
             }
         }
+	*/
 
         if (this.mapSpeed >= this.mapMaxSpeed) {
             this.scene.start("win_game");
