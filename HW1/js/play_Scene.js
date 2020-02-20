@@ -539,16 +539,16 @@ class play_Scene extends Phaser.Scene {
     // Controls Player movement - this function is constantly checked in update()
     movePlayerManager() {
         if (this.cursorKeys.left.isDown) {
-            this.player.setVelocityX(-gameSettings.playerSpeed);
+            this.player.setVelocityX(-200);
         }
         else if (this.cursorKeys.right.isDown) {
-            this.player.setVelocityX(gameSettings.playerSpeed);
+            this.player.setVelocityX(200);
         }
         else if (this.cursorKeys.up.isDown) {
-            this.player.setVelocityY(-gameSettings.playerSpeed);
+            this.player.setVelocityY(-200);
         }
         else if (this.cursorKeys.down.isDown) {
-            this.player.setVelocityY(gameSettings.playerSpeed);
+            this.player.setVelocityY(200);
         }
         else {
             this.player.setVelocityX(0);
