@@ -267,13 +267,13 @@ class play_Scene extends Phaser.Scene {
         
         // Pointer lock will only work after mousedown
 		this.game.canvas.addEventListener('mousedown', function () {
-			game.input.mouse.requestPointerLock();
+			this.game.input.mouse.requestPointerLock();
 		});
 
 		// Exit pointer lock when Q or escape (by default) is pressed.
 		this.input.keyboard.on('keydown_Q', function (event) {
-			if (game.input.mouse.locked)
-				game.input.mouse.releasePointerLock();
+			if (this.game.input.mouse.locked)
+				this.game.input.mouse.releasePointerLock();
 		}, 0, this);
 
 		// Move reticle upon locked pointer move
