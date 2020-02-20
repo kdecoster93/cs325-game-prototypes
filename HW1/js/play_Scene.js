@@ -267,7 +267,7 @@ class play_Scene extends Phaser.Scene {
         
         // Pointer lock will only work after mousedown
 		this.game.canvas.addEventListener('mousedown', function () {
-			this.game.input.mouse.requestPointerLock();
+			game.input.mouse.requestPointerLock();
 		});
 
 		// Exit pointer lock when Q or escape (by default) is pressed.
