@@ -5,6 +5,12 @@ class Win_Scene extends Phaser.Scene {
         // "bootGame is the identifier for this scene"
         super ("win_game");
     }
+    
+    init(data) {
+    //console.log('init', data);
+    this.winner = data.winner;
+    }
+    
     create() {
         //console.log(this.winner);
         if (this.winner == 1) {
