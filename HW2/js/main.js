@@ -16,6 +16,7 @@ window.onload = function() {
 			// Test
 			width: 800,
 			height: 600,
+			parent: 'game',
 
 			// Including the physics system for our game.
 			physics: {
