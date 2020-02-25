@@ -15,6 +15,8 @@ class play_Scene extends Phaser.Scene {
 		this.jump_sounds = [];
 		this.kick_sounds = [];
 		this.pain_sounds = [];
+	    
+	    	this.winner = 0;
 
 		this.winner = 0;
         //this.score = 0;
@@ -318,8 +320,8 @@ class play_Scene extends Phaser.Scene {
 
 			// Win conditions: Player 2 has no more health
 			if (player2.health <= 0) {
-				gameSettings.winner = 1;
-				this.scene.start("win_game");
+				this.winner = 1;
+				this.scene.start("win_game", this.winner);
 			}
 		}
 
@@ -341,8 +343,8 @@ class play_Scene extends Phaser.Scene {
 
 			// Win conditions: Player 1 has no more health
 			if (player1.health <= 0) {
-				gameSettings.winner = 2;
-				this.scene.start("win_game");
+				this.winner = 2;
+				this.scene.start("win_game", this.winner);
 			}
 		}
 	
