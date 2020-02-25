@@ -6,6 +6,38 @@ class play_Scene extends Phaser.Scene {
         // "playGame" is the identifier for this scene
         super ("play_game");
     }
+    preload() {
+    	this.load.spritesheet("player", "assets/Playership_short.png",{
+            frameWidth: 96, frameHeight: 164
+        });
+	this.anims.create({
+			key: 'gear_first',
+			frames: this.anims.generateFrameNumbers('player', { start: 0, end: 2 }),
+			frameRate: 20,
+			repeat: -1
+	});
+
+	this.anims.create({
+		key: 'gear_second',
+		frames: this.anims.generateFrameNumbers('player', { start: 3, end: 8 }),
+            	frameRate: 20,
+            	repeat: -1
+	});
+
+	this.anims.create({
+		key: 'gear_third',
+		frames: this.anims.generateFrameNumbers('player', { start: 9, end: 13 }),
+		frameRate: 20,
+		repeat: -1
+        });
+
+        this.anims.create({
+		key: 'gear_fourth',
+		frames: this.anims.generateFrameNumbers('player', { start: 14, end: 17 }),
+		frameRate: 20,
+		repeat: -1
+	});
+    }
     
     create() {
         // class variable for background named this.background
@@ -22,7 +54,7 @@ class play_Scene extends Phaser.Scene {
         // this.terrain = this.map.addTilesetImage('Tile_Test_01', 'tiles');
 
 
-        this.background = this.add.tileSprite(0,0, config.width, config.height, "tiles");
+        this.background = this.add.tileSprite(0,0, 800, 600, "tiles");
         this.background.setOrigin(0,0);
         // The speed that the map will initially move
         this.mapSpeed = 2.5;
@@ -80,18 +112,18 @@ class play_Scene extends Phaser.Scene {
         //this.ship3 = this.add.sprite(config.width/2 + 50, config.height/2, "ship3");
         
         // using the config variable to position ships in the scene (X, Y)
-        this.squidShip = this.physics.add.sprite(config.width / 2 - 250, config.height / 2 + 150, "ship1");
+        this.squidShip = this.physics.add.sprite(800 / 2 - 250, 600 / 2 + 150, "ship1");
         // flipping the Squid Ship upside down
         //this.squidShip.flipY = true;
-        this.ship2 = this.add.sprite(config.width / 2 + 100, config.height / 2 + 200, "ship1");
-        this.ship3 = this.add.sprite(config.width / 2 + 250, config.height / 2 + 150, "ship1");
+        this.ship2 = this.add.sprite(800 / 2 + 100, 600 / 2 + 200, "ship1");
+        this.ship3 = this.add.sprite(800 / 2 + 250, 600 / 2 + 150, "ship1");
 
         this.squidShip.setScale(0.5);
         this.ship2.setScale(0.85);
         this.ship3.setScale(1.2);
 
         // enemy that attacks our player
-        this.enemy = this.physics.add.sprite(config.width / 2, config.height/2 + 250, "ship1")
+        this.enemy = this.physics.add.sprite(800 / 2, 600/2 + 250, "ship1")
         this.enemy.setScale(1.5);
 
         // Putting our enemy ships into a physics group 
@@ -100,10 +132,10 @@ class play_Scene extends Phaser.Scene {
         this.enemies.add(this.ship2);
         this.enemies.add(this.ship3);
 
-        this.player = this.physics.add.sprite(config.width / 2, config.height / 2 - 150, "player");
+        this.player = this.physics.add.sprite(800 / 2, 600 / 2 - 150, "player");
         // scale an image
         this.player.setScale(0.75);
-        this.player.play("gear_first");
+        //this.player.play("gear_first");
         this.player.setCollideWorldBounds(true);
 
         // Creates a black strip background for our Score to rest on
@@ -113,8 +145,8 @@ class play_Scene extends Phaser.Scene {
         // Draw polygon lines with coords
         graphics.beginPath();
         graphics.moveTo(0, 0);
-        graphics.lineTo(config.width, 0);
-        graphics.lineTo(config.width, 35);
+        graphics.lineTo(800, 0);
+        graphics.lineTo(800, 35);
         graphics.lineTo(0, 20);
         graphics.lineTo(0, 0);
         // Close and fill
@@ -129,8 +161,9 @@ class play_Scene extends Phaser.Scene {
         this.velocityUI = this.add.bitmapText(600, 5, "pixelFont", "VELOCITY: ", 32);
 
         // Creating the player's aiming reticle
-        this.reticle = this.physics.add.sprite(this.player.x, this.player.y + 50, 'target');
+        this.reticle = this.physics.add.sprite(this.player.x, this.player.y, 'target');
         this.reticle.setOrigin(0.5, 0.5).setDisplaySize(25, 25).setCollideWorldBounds(true);
+	this.reticle.visible = false;
 
         // Velocity for the player
         this.hpText = this.add.bitmapText(320, 0, "pixelFont", "HP: ", 32);
@@ -266,14 +299,14 @@ class play_Scene extends Phaser.Scene {
         }, this);
         
         // Pointer lock will only work after mousedown
-		game.canvas.addEventListener('mousedown', function () {
+		this.game.canvas.addEventListener('mousedown', function () {
 			game.input.mouse.requestPointerLock();
 		});
 
 		// Exit pointer lock when Q or escape (by default) is pressed.
 		this.input.keyboard.on('keydown_Q', function (event) {
-			if (game.input.mouse.locked)
-				game.input.mouse.releasePointerLock();
+			if (this.game.input.mouse.locked)
+				this.game.input.mouse.releasePointerLock();
 		}, 0, this);
 
 		// Move reticle upon locked pointer move
@@ -315,8 +348,8 @@ class play_Scene extends Phaser.Scene {
 				//enemyHit.setX(Phaser.Math.Between(0, config.width));
 				//enemyHit.setY(Phaser.Math.Between(0, config.height));
                 // respawn the enemy back at the bottom
-                enemyHit.y = config.height;
-                var randomX = Phaser.Math.Between(0, config.width);
+                enemyHit.y = 600;
+                var randomX = Phaser.Math.Between(0, 800);
                 enemyHit.x = randomX;
                 enemyHit.setTexture("ship1");
                 enemyHit.anims.play("squidShip_anim", true);
@@ -481,6 +514,7 @@ class play_Scene extends Phaser.Scene {
 
         // KAD -------------------------
         // Player Ship animations
+	/*
         if (this.mapSpeed > 15) {
             //console.log("true");
             if (this.mapSpeed > 50) {
@@ -521,6 +555,7 @@ class play_Scene extends Phaser.Scene {
                 this.anim2 = false;
             }
         }
+	*/
 
         if (this.mapSpeed >= this.mapMaxSpeed) {
             this.scene.start("win_game");
@@ -539,16 +574,16 @@ class play_Scene extends Phaser.Scene {
     // Controls Player movement - this function is constantly checked in update()
     movePlayerManager() {
         if (this.cursorKeys.left.isDown) {
-            this.player.setVelocityX(-gameSettings.playerSpeed);
+            this.player.setVelocityX(-200);
         }
         else if (this.cursorKeys.right.isDown) {
-            this.player.setVelocityX(gameSettings.playerSpeed);
+            this.player.setVelocityX(200);
         }
         else if (this.cursorKeys.up.isDown) {
-            this.player.setVelocityY(-gameSettings.playerSpeed);
+            this.player.setVelocityY(-200);
         }
         else if (this.cursorKeys.down.isDown) {
-            this.player.setVelocityY(gameSettings.playerSpeed);
+            this.player.setVelocityY(200);
         }
         else {
             this.player.setVelocityX(0);
@@ -603,8 +638,8 @@ class play_Scene extends Phaser.Scene {
 
     // resets a ships position at the top of the config screen on a random x coordinate
     resetShipPos(ship) {
-        ship.y = config.height;
-        var randomX = Phaser.Math.Between(0, config.width);
+        ship.y = 600;
+        var randomX = Phaser.Math.Between(0, 800);
         ship.x = randomX;
     }
 
@@ -649,8 +684,8 @@ class play_Scene extends Phaser.Scene {
 
     // Moves the player back to their starting position and resets the game
     resetPlayer() {
-        var x = config.width / 2 - 8;
-        var y = config.height + 64;
+        var x = 800 / 2 - 8;
+        var y = 600 + 64;
         this.player.enableBody(true, x, y, true, true);
         this.player.alpha = 0.5;
 
@@ -658,7 +693,7 @@ class play_Scene extends Phaser.Scene {
             // tween targets ship
             targets: this.player,
             // player's ship is hidden below the screen, move 64 pixels above the bottom of screen
-            y: config.height - 64,
+            y: 600 - 64,
             ease: 'Power1',
             // duration is 1.5 seconds
             duration: 1500,

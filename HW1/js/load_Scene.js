@@ -34,9 +34,9 @@ class load_Scene extends Phaser.Scene {
         /*this.load.spritesheet("player", "assets/player_ship.png",{
             frameWidth: 16, frameHeight: 24
         });*/
-        this.load.spritesheet("player", "assets/playership_short.png",{
-            frameWidth: 96, frameHeight: 164
-        });
+        //this.load.spritesheet("player", "assets/playership_short.png",{
+        //    frameWidth: 96, frameHeight: 164
+        //});
         this.load.spritesheet("laser", "assets/laser_bolt.png",{
             frameWidth: 16, frameHeight: 16
         });
@@ -134,7 +134,7 @@ class load_Scene extends Phaser.Scene {
 			frameRate: 20,
 			repeat: -1
         });*/
-
+	/*
         this.anims.create({
 			key: 'gear_first',
 			frames: this.anims.generateFrameNumbers('player', { start: 0, end: 2 }),
@@ -162,6 +162,7 @@ class load_Scene extends Phaser.Scene {
 			frameRate: 20,
 			repeat: -1
 		});
+	*/
 
         this.anims.create({
 			key: "laser_anim",
