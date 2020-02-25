@@ -12,12 +12,218 @@
 		<script type="text/javascript" src="js/Blood.js"></script>
 		<!-- Keep the config file at the bottom. Otherwise it will fail -->
 		<script type="text/javascript" src="js/main.js"></script>
-    	<style type="text/css">
-        	body {
-            	margin: 0;
-        	}
-    	</style>
-	</head>
-	<body>
-	</body>
+    	<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Launch!</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+<li> Launch is a velocity focused game where the player must hold shift down in order to accelerate their spacecraft fast enough to break
+	into the atmosphere. However, the player will also have to contend with enemies that attempt to block their exit. The player only
+	has three lives so they must strive to avoid the attacks made against them all while trying to reach the max velocity! The 
+	original feature of this top down scrolling game and what seperates it from others like it is the transfer of the maps speed from
+	the computer's control to the player. This creates the illusion that the player is accelerating their ship past the world below 
+	them.</li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+<li>Launch utilizes map moving technology that creates an effect that makes the player believe they're accelerating the longer they hold
+	the shift button down when in reality the map beneath them is moving faster. This game also utilizes enemy technology that 
+	pressures the player to move from one spot by shooting damaging laser at them. These enemies also are a part of a fine tuned 
+	spawning system that ensures they will continue to harass the player when they go too far off screen.</li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+<li>1. I learned how to incorporate multiple scenes into my game.
+    2. I learned how to build a background map using the Tiled map generator.
+    3. I learned how to create classes and incorporate them into a main game play scene.
+    4. I learned how to move a looping tile map that creates the illusion of movement.</li>
+</ul>
+    
+What was the easiest or hardest part of making it?
+<ul>
+<li>The hardest part in the process of making this game was trying to make different classes and scenes work together and function 
+	properly. Many features that would have been in the game had to be put on the back burner due to bugs related to the shooting
+	code not interfacing well with any variables or functions outside its scene. Another part that took a lot of time was 
+	designing the tiled map for the background of the game.</li>
+</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Player Space Ship image: <a href="https://i.pinimg.com/originals/05/c0/79/05c079786ba86e04fd8b2faedba844a1.png">Player Spaceship</a></li>
+</ul>
+<ul>
+<li>Squid Sprite: <a href="https://retrogamezone.co.uk/metalslug/sprites/creature/squid.gif">Squid Sprite</a></li>
+</ul>
+<ul>
+<li>Target Icon: <a href="https://www.vecteezy.com/vector-art/637852-target-icon-symbol-sign">Target Icon</a></li>
+</ul>
+<ul>
+<li>Laser Image: <a href="https://opengameart.org/content/bullet-collection-1-m484">Laser Image</a></li>
+</ul>
+<ul>
+<li>Squid Add on: <a href="https://i.imgur.com/CwOskBO.png>Squid Add on</a></li>
+</ul>
+<ul>
+<li>Background music: <a href="https://www.youtube.com/watch?v=qFfybn_W8Ak">Background music</a></li>
+</ul>
+<ul>
+<li>Laser Sound: <a href="https://www.soundfishing.eu/sound/laser-gun">Laser Sound</a></li>
+</ul>
+<ul>
+<li>Explosion Sound: <a href="http://soundbible.com/538-Blast.html">Explosion Sound</a></li>
+</ul>
+</li>
+<li>Explosion: <a href="https://i.ya-webdesign.com/images/bomb-sprite-png.png">Explosion</a></li>
+</ul>
+</li>
+<li>Menu Background: <a href="https://www.igorstshirts.com/blog/conceptships/2013/mathias_verhasselt/mathias_verhasselt_02.jpg
+">Menu Background</a></li>
+</ul>
+</li>
+</li>
+<li>Ship Exhaust: <a href="https://opengameart.org/sites/default/files/energy_effect_base.png">Ship Exhaust</a></li>
+</ul>
+</li>
+</li>
+<li>Ship Exhaust: <a href="https://opengameart.org/sites/default/files/energy_effect_base.png">Ship Exhaust</a></li>
+</ul>
+</li>
+</li>
+<li>Tiled Textures 01: <a href="https://opengameart.org/content/zrpg-beach">Tiled Textures 01</a></li>
+</ul>
+</li>
+</li>
+<li>Tiled Textures 02: <a href="https://opengameart.org/content/zrpg-tiles">Tiled Textures 02</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li> My game most closely resembles a tutorial on youtube by Luis Zuno and the phaser example "Top Down Shooter". I borrowed the template code from both examples to get a head start
+    on my game. I incorporated the shooting elements, the knowledge of how to make a map scroll, and how to load different scenes into my game. Here's a link to the helpful tutorial
+	on youtube: <a href="https://www.youtube.com/watch?v=frRWKxB9Hm0&t=5s">Luis Zuno</a></li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+<li>Launch is a fast paced game where the player must avoid obstacles in the form of enemies and their attacks all while
+	trying to accelerate as quickly as possible to escape the planet's surface and win the game.</li>
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+    I used to the Storymatic theme of flight for my game with the idea being focused on launching one self into space by increasing
+	speed duirng flight.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+<li>The input I used for this game was direct/mouse/keyboard/clickable buttons. The randomness of this game is deterministic for the
+	controls and somewhat random for the enemies in regards to their spawn point at the bottom of the screen. The play style is focused
+	on Competitor and Achiever. Lastly, the Genre is an Overhead/Sidescrolling/Shooter with less emphasis on shooting and more emphasis
+	on the current speed of the player. </li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+<li>The game mechanic this prototype is evaluating is the illusionary effects of accelerating map speed in the background to make
+	the player in the foreground seem faster. Another game mechanic that is being tested is how the enemies create a sense of spectacle
+	and chase that create obstacles for the player.</li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+<li>Players should feel as if they are barely avoiding the enemies pursuing them in their rear view mirror. They will constantly hold
+	the shift button down moving faster and faster all the while getting ever closer to the finish line that is their max velocity. </li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+<li>How to play: Upon starting the game you can use the shift key to start accelerating your speed and will the WASD keys to move your 
+	spaceship in four directions. Enemies will appear behind the player as they move forward across the map and harass the player in 
+	an attempt to remove all three of their lives and restart the game. The player can fire bullets at them to remove them temporarily
+	and gain points on a scoreboard, but they should be focused on reaching the max velocity above all else. The core mechanic of this
+	game is speed and you must survive long enough to reach that speed if you want to win the game. </li>
+</ul> 
+    Controls: 
+	Acceleration: Shift
+        Movement Keys: WASD
+        Bullet Fire: Left/Right Mouse click
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+<li> The best strategy to follow to win this game is to track the largest enemy that shoots the bullets at you and keep your distance from them.
+	the other enemies exist to distract you from the greater threat and become trigger happy which can hide the enemy's bullet among
+	you own. Hold down shift and avoid the bullets to win.</li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+<li>Commmander Smiley is stranded on a war torn planet and seeks to escape on his spaceship. However, plenty of the world's inhabitants
+	would rather see him burning in the rubble of his spacecraft. Shortly after takeoff, Commander Smiley finds that he is being 
+	pursued by squid agressors. He must do eevrything he can to break into orbit before they can knock him down.
+    craft.</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+<li>The demographic this game can be played and enjoyed by are any individual five years of age or older. Those with an interest in
+    science fiction are also prime demographics.</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+<li>An average game only takes about two minutes to play. If a player keeps dying it could go up to seven minutes.</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+</body>
 </html>
