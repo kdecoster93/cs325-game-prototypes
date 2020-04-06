@@ -5,14 +5,20 @@ class Win_Scene extends Phaser.Scene {
         // "bootGame is the identifier for this scene"
         super ("win_game");
     }
+    
+    init(data) {
+    //console.log('init', data);
+    this.winner = data.winner;
+    }
+    
     create() {
         //console.log(this.winner);
-        if (gameSettings.winner == 1) {
+        if (this.winner == 1) {
             this.background = this.add.image(0, 0, 'shrek_win');
             this.background.setScale(1.5);
             this.background.setOrigin(0,0);
         }
-        if (gameSettings.winner == 2) {
+        if (this.winner == 2) {
             this.background = this.add.image(200, 150, 'pepe_win');
             this.background.setScale(1.5);
             this.background.setOrigin(0,0);

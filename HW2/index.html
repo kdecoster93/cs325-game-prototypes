@@ -2,7 +2,7 @@
 <html lang="en"> 
 	<head> 
     	<meta charset="UTF-8" />
-    	<title>Digital Assignment 2</title>
+    	<title>Meme Royale</title>
 		<script type="text/javascript" src="js/phaser.js"></script>
 		<script type="text/javascript" src="js/menu_Scene.js"></script>
 		<script type="text/javascript" src="js/controls_Scene.js"></script>
@@ -12,12 +12,210 @@
 		<script type="text/javascript" src="js/Blood.js"></script>
 		<!-- Keep the config file at the bottom. Otherwise it will fail -->
 		<script type="text/javascript" src="js/main.js"></script>
-    	<style type="text/css">
-        	body {
-            	margin: 0;
-        	}
-    	</style>
-	</head>
-	<body>
-	</body>
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Meme Royale</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+<li> Meme Royale is a 2D Fighting Game where two players must battle each other in an arena until one is left standing. Unlike other 
+	fighting games, Meme Royale includes a health regeneration mechanic that allows players to strategically withdraw from battle
+	in a temporary attempt to regain their footing before they continue to engage. This can create an interesting game of cat and
+	mouse where a player that is skilled at moving can make a comeback by recovering from the damage they previously sustained. This
+	game is also unique in the way that it uses popular memes from internet culture as its fighters. </li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+<li> Meme Royale utilizes an advanced moving system that is more advanced then simple moving to the left right. This includes the ability
+	to dash quickly across the map and behind opponents where they can be stricken. The game also has sounds for every combat move and
+	the pain recieved by said moves. Meme Royale also includes a blood splatter system that spawns blood on each player in different
+	locations across their sprites body. All of this comes with addiotional tech that allows two seperate people to 
+	battle on the same computer. </li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+<li>1. I learned how to make a game that two players can both be invloved in with equal chances of winning and losing.
+    2. I learned how design and program fighting mechanics that feel appropriate for a 2D based fighter.
+    3. I learned how to send data from different scenes to others.
+    4. I learned how group sounds used for combat noises and build a system that plays random noises for each attack.</li>
+</ul>
+    
+What was the easiest or hardest part of making it?
+<ul>
+<li>The hardest part in the process of making this game was trying to balance each button that allowed player movement and animations.
+	Buttons and animations often interfere with each other and create a hectic testing ground where you spend most of your time 
+	trying to get the right animation to play on a key press. Another difficult part of the game was learning how to make a sound 
+	system that could group and play random sounds for a single animation. </li>
+</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Blood Spatter Effect: <a href="https://opengameart.org/sites/default/files/blood%20-%20right%201_0.png">Blood</a></li>
+</ul>
+<ul>
+<li>Level Blocks: <a href="https://opengameart.org/sites/default/files/hyptosis_sprites-and-tiles-for-you.png">Block</a></li>
+</ul>
+<ul>
+<li>Pepe Win Screen: <a href="data:image/png;base64,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">Pepe Win</a></li>
+</ul>
+<ul>
+<li>Shrek Win Screen: <a href="https://i.pinimg.com/originals/8a/6f/ea/8a6fea8cd3186de48d1865ce705ec870.png">Shrek Win</a></li>
+</ul>
+<ul>
+<li>Power Up Scream: <a href="https://www.youtube.com/watch?v=8WIZfPP9z28">Scream</a></li>
+</ul>
+<ul>
+<li>Shrek Sound Effects: <a href="https://www.sounds-resource.com/xbox/shrek/sound/15159/">Shrek Sounds</a></li>
+</ul>
+<ul>
+<li>Shrek Sprite Sheet: <a href="https://www.spriters-resource.com/game_boy_advance/shrekreekin/sheet/7997/">Shrek Sprite</a></li>
+</ul>
+<ul>
+<li>Fire Pepe: <a href="https://pics.me.me/rare-pepe-waermark-pls-dont-steal-%3Cp%3Efiery-pepe%3C-p%3E-33753642.png">Fire Pepe</a></li>
+</ul>
+</li>
+<li>Pepe Punch: <a href="https://www.kindpng.com/picc/m/107-1078186_pepe-the-frog-punching-png-pepe-the-frog.png">Pepe Punch</a></li>
+</ul>
+</li>
+<li>Pepe Angry: <a href="https://i.kym-cdn.com/photos/images/facebook/000/913/373/efd.jpg">Pepe Angry</a></li>
+</ul>
+</li>
+</li>
+<li>Shrek Explosion: <a href="https://www.lucasjanin.com/wp-content/uploads/2014/06/shrek4_pumpin_explosion_3.jpg">Shrek Explosion</a></li>
+</ul>
+</li>
+</li>
+<li>Glowing Eyes: <a href="https://cdn.glitch.com/a3cb1903-3df2-470f-9076-c2370808ed39%2Flaser-eye-meme-png.png?1537086011928">Glowing Eyes</a></li>
+</ul>
+</li>
+</li>
+<li>Background City: <a href="https://vignette.wikia.nocookie.net/nitrome/images/8/85/War_Torn_City.png/revision/latest?cb=20130913124733">Background City 01</a></li>
+</ul>
+</li>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li> My game most closely resembles the basic phaser 3 example tutorial on their website. I used this star collecting game as the basis
+	for my 2D fighting game and it still resembles it with the same platforming elements.</li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+<li>Meme Royale is a 2D fighting game where two players must compete by using a flurry of assaults and strategic withdrawals to better their 
+	opponent and be the last meme standing!</li>
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+    I used the Storymatic theme of Cartoonist and Celebrity since memes are an amamalgamation of each. By making memes the focus of my
+	game I was able to hit two birds with one stone since even real life celebrities can become memes.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+<li>The input I used for this game was direct/keyboard. The randomness of this game is nonexistent and very deterministic. The play 
+	style is focused on Competitor and Joker. Lastly, the Genre is Platformer/Fighting with heavy emphasis on movement and brief
+	assaults. </li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+<li>The game mechanic this prototype is evaluating is the combination of a regeneration mechanics and platformer moving mechanics into
+	a 2D fighting game. Trying to balance the regenerative abilites alongside a fair fighting genre based game is what is being
+	tested here. </li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+<li>Players will feel very competitive with the opposing player during gameplay. At the same time, players should laugh at the context
+	of the game and be amused by the memes on screen pummeling each other for supremacy.</li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+<li>A control screen will appear before the game starts designating what controls do what for each player. One player will play as Shrek
+	and the other player will play as Pepe the Frog. Each player can move left and right, dash left and right, punch, kick, jump, and
+	power up (regenerate health). These controls will allow the player to skip about the battlefield and pester the other player with
+	volleys of unrelenting hits. Each player's health is displayed at the top of the screen. </li>
+</ul> 
+    Controls: 
+	Explained in the opening game screen (specific to each player)
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+<li> The best strategy to follow to win this game is to make quick and successive strikes on the opossing player making sure to deal more
+	damage than take damage. If the other player tries to retreat to heal, pursue them and continue harassing them. If you are that
+	player that is running away, then take time to only heal yourself when far away from the enemy player. </li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+<li> Shrek and Pepe converge in the ruins of Los Angeles, California prepared for their final battle. The Meme War has been a brutal and
+	bloody conflict that tore asunder the great Alliance of Memes that once flourished. All of that changed once the great censorship
+	faction attacked and split the factions of memes into different groups all vying for power. Today, two meme leaders meet to bring
+	their conflict to an end and determine who is the true supreme meme.
+    craft.</li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+<li>The demographic this game can be played and enjoyed by are any individual 12 years of age or older. Those with an interest in
+    internet culture are prime demographics.</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+<li>An average game only takes about two to three minutes to play. If a players keep dodging each other it could go up to seven minutes.</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+</body>
 </html>
