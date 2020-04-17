@@ -2,7 +2,7 @@
 <html lang="en"> 
 	<head> 
     	<meta charset="UTF-8" />
-    	<title>Digital Assignment 2</title>
+    	<title>Final Iteration 02</title>
 		<script type="text/javascript" src="js/phaser.js"></script>
 		<script type="text/javascript" src="js/menu_Scene.js"></script>
 		<script type="text/javascript" src="js/controls_Scene.js"></script>
@@ -19,12 +19,249 @@
 		<script type="text/javascript" src="js/HealthBar.js"></script>
 		<!-- Keep the config file at the bottom. Otherwise it will fail -->
 		<script type="text/javascript" src="js/main.js"></script>
-    	<style type="text/css">
-        	body {
-            	margin: 0;
-        	}
-    	</style>
-	</head>
-	<body>
-	</body>
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Alex Jones vs The World</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+What is original about your game?
+<ul>
+<li> Alex Jones vs The World is a parody-based game where the player plays as the outrageous political commentator and conspiracy 
+	theorist Alex Jones in a post-apocalyptic coronavirus world. The originality of this game stems from merging 2D-Platformer 
+	and Dark Souls gameplay mechanics with a comedic setting and story. As the player tries to defeat enemies and bosses, they 
+	will listen to hilarious sound bites made by Alex Jones that are implemented in a way to give the game’s story context. </li>
+</ul>
+</li>
+
+<li><strong>Technical Merit:</strong>
+What is interesting about your game technology?
+<ul>
+<li> Alex Jones vs The World utilizes an advanced moving system that allows the player to move in all 2-Dimensional X and Y directions. 
+	This includes the ability to walk, jump, and sprint quickly across the map. The game also has random sounds for every combat 
+	move and the pain recieved and inflicted by said moves. Alex Jones vs The World also includes a blood splatter system that 
+	spawns blood on enemy AI in different locations across their sprites body. All of this comes with additional tech that allows 
+	enemy AI to move towards the player and attack them in different and unique ways. Some of this AI code was made from 
+	foundational code adapted from a previous game made in class cited here <a href=https://keckles.github.io/cs325-game-prototypes/P3/index.html>Game Source</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype?
+<ul>
+<li>1. I learned how to use groups to control multiple enemies.
+    2. I learned more of the complexities of developing good player movement and control feedback.
+    3. I learned how to build layered backgrounds that move with the player to create a sense of depth.
+    4. I learned the basics of making enemies that can track, follow, and attack the player. </li>
+</ul>
+    
+What was the easiest or hardest part of making it?
+<ul>
+<li>The hardest part in the process of making this game was developing the AI enemies and working with sprite colliders. Throughout
+	the development of this prototype, a lot of testing went into collider changes initiated by changes in sprite size. AI was
+	also new and took time to learn as well as how to properly place many of them in a single group. </li>
+</ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+<li>Blood Spatter Effect: <a href="https://opengameart.org/sites/default/files/blood%20-%20right%201_0.png">Blood</a></li>
+</ul>
+<ul>
+<li>Level Blocks: <a href="https://opengameart.org/sites/default/files/hyptosis_sprites-and-tiles-for-you.png">Block</a></li>
+</ul>
+<ul>
+<li>Background_01: <a href="https://scutanddestroy.files.wordpress.com/2012/04/shmup-background-01-composite.png">Background_01</a></li>
+</ul>
+<ul>
+<li>City_01: <a href="https://ansimuz.itch.io/warped-city">City_01</a></li>
+</ul>
+<ul>
+<li>Power Up Scream: <a href="https://www.youtube.com/watch?v=8WIZfPP9z28">Scream</a></li>
+</ul>
+<ul>
+<li>Movement Sound Effects: <a href="https://www.sounds-resource.com/xbox/shrek/sound/15159/">Shrek Sounds</a></li>
+</ul>
+<ul>
+<li>City_02: <a href="https://ansimuz.itch.io/cyberpunk-street-environment">City_02</a></li>
+</ul>
+<ul>
+<li>Enemy Sprites: <a href="https://ansimuz.itch.io/gothicvania-patreon-collection">Enemy Sprites</a></li>
+</ul>
+</li>
+<li>Doom Background: <a href="https://i.pinimg.com/originals/d3/6a/1a/d36a1a3a68d86696d3010513fbf78ec1.jpg">Doom Background</a></li>
+</ul>
+</li>
+<li>Alex Jones No Shirt: <a href="https://external-preview.redd.it/cV_F4KSnRMk1uN8-PaSOndBHSmb5vOYVz-D6cleGv1g.jpg?auto=webp&s=0e3411e7312f573d65bceb303fa1f92dceea959d">Alex Jones No Shirt</a></li>
+</ul>
+</li>
+</li>
+<li>American Flag: <a href="https://www.emaze.com/@AICWCRL">American Flag</a></li>
+</ul>
+</li>
+</li>
+<li>Glowing Eyes: <a href="https://cdn.glitch.com/a3cb1903-3df2-470f-9076-c2370808ed39%2Flaser-eye-meme-png.png?1537086011928">Glowing Eyes</a></li>
+</ul>
+</li>
+</li>
+<li>Buttons Code Help: <a href="https://snowbillr.github.io/blog/2018-07-03-buttons-in-phaser-3/">Buttons Code Help</a></li>
+</ul>
+</li>
+</li>
+<li>Blood Sound Effect: <a href="https://www.youtube.com/watch?v=0XKg_o1YfTg">Blood Sound Effect</a></li>
+</ul>
+</li>
+</li>
+<li>Rat Attack Noise: <a href="http://soundbible.com/1055-Vampire-Bite.html">Rat Attack Noise</a></li>
+</ul>
+</li>
+</li>
+<li>Blood: <a href="https://gdu.one/forums/uploads/gallery_1494_237_1854.png">Blood</a></li>
+</ul>
+</li>
+</li>
+<li>Player Sprite: <a href="https://spritedatabase.net/file/18744">Player Sprite</a></li>
+</ul>
+</li>
+</li>
+<li>Music: <a href="https://www.youtube.com/watch?v=LgyXeTiOo4E">Music</a></li>
+</ul>
+</li>
+</li>
+<li>Background City: <a href="https://www.reddit.com/r/wallpapers/comments/773uhb/made_this_from_a_popular_cozy_gif/">Background City</a></li>
+</ul>
+</li>
+</li>
+<li>Menu Background: <a href="https://www.xboxwallpapers.net/1920x1080/doom-eternal-steelbook-art-wallpaper/">Menu Background</a></li>
+</ul>
+</li>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li> The prototype I designed that most resembles this game is the 2D platformer/fighting game Meme Royale. I incorporate much of 
+	these game mechanics into Alex Jones vs The World as well as other programming knowledge I learned from my other prototypes. 
+	The closest modern game that resembles this game is Risk of Rain. They are similar by the fact that they are both 
+	2D platformers that are focused on defeating enemies and bosses all while dealing with high stake scenarios such as 
+	permanent death in Risk of Rain.</li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A one-sentence summary of your game.
+<ul>
+<li> In a 2D action platformer world ravaged by the coronavirus, Alex Jones must traverse a post-apocalyptic America acquiring new 
+	powers and abilities in order to defeat the servants and lords of the coronavirus. </li>
+</ul>
+</li>
+
+<li><strong>Theme:</strong>
+State which of the Storymatic themes you used.
+    - N/A
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+<li>The input I used for this game was direct/keyboard. The randomness of this game is present in the AI. The play 
+	style is focused on Joker. Lastly, the Genre is Platformer/Fighting with heavy emphasis on movement and brief
+	assaults. </li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+What game mechanic is this prototype evaluating?
+<ul>
+<li> The main game mechanics of Alex Jones vs The World are the fighting mechanics, platforming mechanics, and enemy AI. All three 
+	of these mechanics are important to the overall gameplay experience as either of the three can dull the enjoyment a player 
+	receives if one is subpar. The fighting mechanics will consist of close combat and projectile moves. The platforming 
+	mechanics will include 2D movement at various speeds and jumping. The enemy AI should challenge the player to master these 
+	controls, but not be so overbearing that it appears unfair. </li>
+</ul>
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+What experience do you want players to have when playing your game?
+<ul>
+<li> Players should feel as if the controls are intuitive and natural and that the fighting mechanics are visceral and provide 
+	immediate audio and visual feedback upon damage being dealt or taken. Each enemy AI should serve a different role and 
+	individually be easy to deal with, but in large groups should require careful thought. Ultimately, the player should see 
+	the game as being a fair and challenging 2D fighting platformer that rewards and punishes the player for making the right 
+	and wrong decisions respectively. Additionally, the player should be amused and or laughing throughout their journey as 
+	they hear Alex Jones make ludicrous statements in response to the events occurring within the game.</li>
+</ul>
+</li>
+
+<li><strong>Gameplay:</strong>
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+<ul>
+<li> The gameplay consists of 3 major gameplay mechanics. The first mechanic is focused on movement which allows the player to move 
+	in any two-dimensional direction via walking, running, and jumping. The movement mechanic is critical to master in order to 
+	progress in the game when moving from one platform to another. The second mechanic is combat which gives the player the 
+	ability to do damage to enemies via punches and kicks while also including projectile based moves that allow the player to 
+	attack enemies from a distance with a finite amount of shots. The last gameplay mechanic is the enemy AI. Each different 
+	enemy that the player encounters will serve a different role in engaging the player and will have a different type of 
+	weakness. Together, different groups of enemies can pose a challenge to the player where one by themselves may not. 
+	All three of these gameplay mechanics will work in unison to drive the player forward into an engaging experience. </li>
+</ul> 
+    Controls: 
+	Explained in the opening game screen
+</li>
+
+<li><strong>Strategies:</strong>
+What player strategies do you expect will be effective at playing this game?
+<ul>
+<li> The best strategy to follow to win this game is to make quick and successive strikes on the opposing enemies while making sure 
+	to heal yourself if you tak too much damage. Try to pick enemies apart one at a time or risk being engulfed in an endless horde. </li>
+</ul>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+<ul>
+<li> Alex Jones is an outrageous news commentator and conspiracy theorist that is known for his long-winded rants about globalists 
+	and the many conspiracies he supports and produces. Alex finds himself in the apocalyptic aftermath of the coronavirus wave 
+	that spread through America and the world at large. The coronavirus has mutated much of the earth’s populace into undead 
+	demons that prowl the land looking to infect and harm more of humanity. It’s up to Alex Jones to save the world and destroy 
+	the source of the coronavirus all while ranting the whole way through. The setting and world are a parody of the world Alex 
+	Jones believes to be true. </li>
+</ul>
+</li>
+
+<li><strong>Target Audience:</strong>
+A single sentence that describes the demographic you're trying to reach.
+<ul>
+<li> The player demographic ranges from teenagers to adults that are interested in 2D platforming games since knowledge of Alex 
+	Jones is required to appreciate the humor and setting of this game.</li>
+</ul>
+</li>
+
+<li><strong>Play Time:</strong>
+How long does your game take to play?
+<ul>
+<li>An average game level only takes about two to three minutes to play.</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+</body>
 </html>
