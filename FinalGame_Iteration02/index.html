@@ -63,17 +63,20 @@ What is interesting about your game technology?
 <li><strong>Prototype Postmortem:</strong>
 What did you learn from this prototype?
 <ul>
-<li>1. I learned how to use groups to control multiple enemies.
-    2. I learned more of the complexities of developing good player movement and control feedback.
-    3. I learned how to build layered backgrounds that move with the player to create a sense of depth.
-    4. I learned the basics of making enemies that can track, follow, and attack the player. </li>
+<li>1. I learned how to give elements within groups (enemies) the ability to launch projectile that can damage the player.
+    2. I learned how to create a health bar for my boss enemies and apply it to group members.
+    3. I learned how to debug Phaser 3 using the debug boolean in main.
+    4. I learned how to make a seamless transistion between two different levels.
+    5. I learned how to create the illusion of the player falling contained within a single bounded screen.
+    6. I learned how to add introductory dialogue to my game. </li>
 </ul>
     
 What was the easiest or hardest part of making it?
 <ul>
-<li>The hardest part in the process of making this game was developing the AI enemies and working with sprite colliders. Throughout
-	the development of this prototype, a lot of testing went into collider changes initiated by changes in sprite size. AI was
-	also new and took time to learn as well as how to properly place many of them in a single group. </li>
+<li>The hardest part in the process was giving different enemies within a group the ability to launch projectiles. Since I have to 
+	iterate through each enemy within a group to give them their behavior, I have to use different methods to give them the same
+	abilities that a single sprite element would have. Groups are required to make the code simpler and easier to track many
+	enemies on screen. Also, working on flying enemy AI was also difficult and different from ground based AI. </li>
 </ul>
 </li>
 
@@ -256,7 +259,7 @@ A single sentence that describes the demographic you're trying to reach.
 <li><strong>Play Time:</strong>
 How long does your game take to play?
 <ul>
-<li>An average game level only takes about two to three minutes to play.</li>
+<li>An average game from start to finish only takes about five to seven minutes to play.</li>
 </ul>
 </li>
 
