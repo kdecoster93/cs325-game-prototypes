@@ -633,7 +633,7 @@ class play_Scene02 extends Phaser.Scene {
                 callbackScope: this
             });
             */
-            this.scene.start("play_Level03")
+            this.scene.start("play_Level03", {restart: 0})
 			//this.winner = 1;
 			//this.scene.start("win_game", {winner: 1});
         }

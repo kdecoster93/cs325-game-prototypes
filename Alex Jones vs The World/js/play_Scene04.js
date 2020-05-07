@@ -17,9 +17,20 @@ class play_Scene04 extends Phaser.Scene {
         this.background = this.add.sprite(1200 / 2, 700 / 2, "FinalBattleBackground");
 		this.background.setScale(3);
         this.background.anims.play('final_Loop', true);
-        
-
-        
+		
+		
+		this.endingMusic = this.sound.add("ending_music");
+		this.gameOver = false;
+		this.musicConfig = {
+			mute: false,
+			volume: 0.25,
+			rate: 1,
+			detune: 0,
+			seek: 0, 
+			loop: true,
+			delay: 0
+		}
+		
         /*
         this.background = this.add.sprite(0,0, 800, 600, "level02_background");
         this.background.setScale(2.5);
@@ -204,7 +215,7 @@ class play_Scene04 extends Phaser.Scene {
         this.hillary.anims.play('idle_hillary', true);
         this.hillary.setCollideWorldBounds(true);
 		this.hillary.health = 1000;
-		this.hillary.fireTimer = 30;
+		this.hillary.fireTimer = 25;
 		this.hillary.powerupTimer = 0;
         this.hillary.greeting = false;
         this.hillary.flipX = true;
@@ -363,18 +374,40 @@ class play_Scene04 extends Phaser.Scene {
 
         //console.log(this.energyPresent);
 
-        this.debris.tilePositionY += 0.5;
+        this.debris.tilePositionY += 1;
 
         this.debrisManager();
 
+		
+		/*
+		if (this.hillaryDead == true && this.gameOver == false) {
+			this.gameOver = true;
+			
+			this.sound.removeByKey('finalBattle_music');
+			
+			this.tweens.add({
+				targets:  this.finalBattleMusic,
+				volume:   0,
+				duration: 500
+			});
+			
+
+			this.endingMusic.play(this.musicConfig);
+		}
+		*/
+		
+
         if (this.hillaryDead == true && this.time >= 500) {
-        
+			
+			this.sound.removeByKey('finalBattle_music');
+			this.endingMusic.play(this.musicConfig);
+
             this.scene.start("win_game")
 			//this.winner = 1;
 			//this.scene.start("win_game", {winner: 1});
         }
         
-        // Used to give a breather before the next level
+		// Used to give a breather before the next level
         else if (this.hillaryDead == true && this.time < 500) {
             this.time += 1;
         }
@@ -582,7 +615,7 @@ class play_Scene04 extends Phaser.Scene {
 
     fireBlastHit (player, fire)
     { 
-        player.health -= 1;
+        player.health -= 2;
         // No need to destroy fire since it will do that itself
         player.setTint(0xff0000);
         fire.destroy();
@@ -828,7 +861,7 @@ class play_Scene04 extends Phaser.Scene {
 		// ------------------
 		// If the Demon is within range of the Player --> Move Towards Player
 
-		if (this.hillary.health > 0 && this.hillary.health <= 500 && Math.abs(player.body.position.x - this.hillary.body.position.x) >= 250 && this.energyPresent <= 3) {
+		if (this.hillary.health > 0 && this.hillary.health <= 750 && Math.abs(player.body.position.x - this.hillary.body.position.x) >= 250 && this.energyPresent <= 2) {
 			this.hillary.body.velocity.x = 0;
             this.hillary.anims.play('powerup_hillary', true);
             var choice = Phaser.Math.Between(0, 500);
@@ -856,7 +889,7 @@ class play_Scene04 extends Phaser.Scene {
 				this.hillary.anims.play('energyPrep_hillary', true);
             }
             
-            else if (this.hillary.anims.currentAnim.key == 'energyBlast_hillary' && this.hillary.fireTimer >= 30) {
+            else if (this.hillary.anims.currentAnim.key == 'energyBlast_hillary' && this.hillary.fireTimer >= 25) {
 
                 var flip = this.hillary.flipX;
                 var offset = 0;
@@ -880,7 +913,7 @@ class play_Scene04 extends Phaser.Scene {
 				this.hillary.fireTimer = 0;
 			}
 	
-			else if (this.hillary.fireTimer < 30){
+			else if (this.hillary.fireTimer < 25){
 				this.hillary.fireTimer += 1;
 			}
         }
@@ -896,11 +929,11 @@ class play_Scene04 extends Phaser.Scene {
 					this.hillary.anims.play('run_hillary', true);
 				}
 
-				this.hillary.body.velocity.x = 300;
+				this.hillary.body.velocity.x = 325;
 					
 				// If the player is not touching the ground and this gay frog is --> jump towards the player
 				if (!player.body.touching.down && this.hillary.body.touching.down) {
-					this.hillary.body.velocity.y = -600;
+					this.hillary.body.velocity.y = -800;
 					this.hillary.anims.play('jump_hillary', true);
 					jump_sound.play();
 				}
@@ -914,11 +947,11 @@ class play_Scene04 extends Phaser.Scene {
 					this.hillary.anims.play('run_hillary', true);
 				}
 
-				this.hillary.body.velocity.x = -300;
+				this.hillary.body.velocity.x = -325;
 					
 				// If the player is not touching the ground and this gay frog is --> jump towards the player
 				if (!player.body.touching.down && this.hillary.body.touching.down) {
-					this.hillary.body.velocity.y = -600;
+					this.hillary.body.velocity.y = -800;
 					this.hillary.anims.play('jump_hillary', true);
 					jump_sound.play();
 				}

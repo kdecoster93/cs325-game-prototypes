@@ -100,6 +100,7 @@ class load_Scene extends Phaser.Scene {
 		this.load.audio("hillaryDeath", "assets/cinematic/HillaryScream.mp3");
 		this.load.audio("preFinalBattle_music", "assets/cinematic/Level03Music.mp3");
 		this.load.audio("finalBattle_music", "assets/cinematic/FinalBattle.mp3");
+		this.load.audio("ending_music", "assets/cinematic/AlexJones_Indie_Ending.mp3");
 		this.load.video('cinematic_Hillary', 'assets/cinematic/Hillarylevel3to4.mp4', 'loadeddata', false, false);
 		this.load.spritesheet('levelFinal_background', 'assets/FinalBattleBackground.png',
 		{ frameWidth: 400, frameHeight: 400 });
@@ -308,8 +309,8 @@ class load_Scene extends Phaser.Scene {
         //this.add.text(20,20, "Loading game...");
 		// Switching scenes
 		
-		//this.scene.start("play_Level03");
-		
+		//this.scene.start("play_Level04");
+	
 		this.scene.start("cinematic00");
 
         // ---------- ANIMATIONS -----------

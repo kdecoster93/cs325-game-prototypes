@@ -9,6 +9,12 @@ class play_Scene03 extends Phaser.Scene {
     }
 	
 	
+    init(data) {
+        //console.log('init', data);
+        this.restart = data.restart;
+    }
+    
+
     create() {
 
 		// Final Battle Music
@@ -798,7 +804,7 @@ class play_Scene03 extends Phaser.Scene {
             this.alex.setCollideWorldBounds(true);
 		}
 		
-		if (this.alex.x >= 7000 && this.alex.levelMusic == false) {
+		if (this.alex.x >= 7000 && this.alex.levelMusic == false && this.restart == 0) {
 			this.alex.levelMusic = true;
 			this.sound.removeByKey('transition_music');
 			this.preFinalBattleMusic.play(this.specialConfig);
@@ -871,7 +877,12 @@ class play_Scene03 extends Phaser.Scene {
 			this.winner = 2;
 			this.scene.start("win_game", {winner: 2});
 			*/
-			this.scene.restart();
+			if (this.alex.x < 7000 && this.restart == 0 && this.alex.levelMusic == false) {
+				this.scene.restart({restart: 0});
+			}
+			else {
+				this.scene.restart({restart: 1});
+			}
 		}
 
 		// Next Level if player descends 

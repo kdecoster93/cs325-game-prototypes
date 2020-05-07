@@ -13,21 +13,6 @@ class play_Scene01 extends Phaser.Scene {
 
 		// Sound arrays for our players
 
-		this.game_music = this.sound.add("menu_music");
-        var music_Config = {
-			mute: false,
-			volume: 0.1,
-			rate: 1,
-			detune: 0,
-			seek: 0, 
-			loop: false,
-			delay: 0
-        }
-
-		if (this.game_music.isPlaying == false) {
-			this.game_music.play(music_Config);
-		}
-
 		
 		this.punch_sounds = [];
 		this.jump_sounds = [];
